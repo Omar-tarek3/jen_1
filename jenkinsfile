@@ -1,5 +1,12 @@
 pipeline {
     agent any
+    parameters{
+        booleanParam(name: 'param',defaultvalue:true, description:'')
+    }
+    enviroment
+    {
+        cred= credentials('credentials1')
+    }
 
     stages {
         stage('Hello') {
@@ -10,7 +17,13 @@ pipeline {
 
         stage('hello 2')
         {
-            steps{
+            when
+            {
+                expression {
+                    params.param
+                }
+            }
+            steps {
             echo 'hello 2'
             }
         }
