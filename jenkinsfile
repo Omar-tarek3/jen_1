@@ -8,5 +8,10 @@ pipeline {
                 echo 'Hello World'
             }
         }
+
+        stage('hello 2')
+        {
+            echo 'hello 2'
+        }
     }
 }
