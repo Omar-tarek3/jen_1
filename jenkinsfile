@@ -1,12 +1,9 @@
 pipeline {
     agent any
     parameters{
-        booleanParam(name: 'param',defaultValue:true, description:'')
+        booleanParam(name: 'param',defaultvalue:true, description:'')
     }
-    enviroment
-    {
-        cred= credentials('credentials1')
-    }
+    
 
     stages {
         stage('Hello') {
